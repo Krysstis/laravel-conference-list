@@ -16,6 +16,7 @@ return [
     ],
 
     'actions' => [
+        'header' => 'Veiksmai',
         'create' => 'Sukurti',
         'update' => 'Išsaugoti',
         'edit' => 'Keisti',

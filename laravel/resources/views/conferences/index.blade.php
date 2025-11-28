@@ -4,16 +4,23 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1>{{ __('conferences.list') }}</h1>
-        @auth
-            <a href="{{ route('conferences.create') }}" class="btn btn-dark">
-                {{ __('conferences.add_new') }}
-            </a>
-        @endauth
+        <div>
+            @guest
+                <a href="{{ route('login') }}" class="btn btn-primary">
+                    {{ __('auth.login') }}
+                </a>
+            @endguest
+            @auth
+                <a href="{{ route('conferences.create') }}" class="btn btn-dark">
+                    {{ __('conferences.add_new') }}
+                </a>
+            @endauth
+        </div>
     </div>
 
     @if($conferences->isEmpty())
         <div class="alert alert-info">
-            No conferences available.
+            {{ __('conferences.no_conferences') }}
         </div>
     @else
         <div class="table-responsive">
@@ -23,14 +30,14 @@
                         <th>{{ __('conferences.fields.title') }}</th>
                         <th>{{ __('conferences.fields.date') }}</th>
                         <th>{{ __('conferences.fields.address') }}</th>
-                        <th class="text-end">{{ __('conferences.actions.edit') }}</th>
+                        <th class="text-end">{{ __('conferences.actions.header') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($conferences as $conference)
                         <tr>
                             <td>{{ $conference->title }}</td>
-                            <td>{{ $conference->date }}</td>
+                            <td>{{ $conference->date->format('Y-m-d') }}</td>
                             <td>{{ $conference->address }}</td>
                             <td class="text-end">
                                 <a href="{{ route('conferences.show', $conference) }}" class="btn btn-sm btn-info">
@@ -44,8 +51,8 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                                class="btn btn-sm btn-danger"
-                                                onclick="return confirm('{{ __('conferences.messages.confirm_delete') }}')">
+                                                class="btn btn-sm btn-danger delete-conference-btn"
+                                                data-conference-name="{{ $conference->title }}">
                                             {{ __('conferences.actions.delete') }}
                                         </button>
                                     </form>

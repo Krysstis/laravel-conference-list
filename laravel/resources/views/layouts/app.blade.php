@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Conference System') }}</title>
+    <title>{{ config('app.name', 'Konferencijų sistema') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -20,6 +20,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    @guest
+                        <li class="nav-item">
+                            <a href="{{ route('login') }}" class="nav-link">
+                                {{ __('auth.login') }}
+                            </a>
+                        </li>
+                    @endguest
                     @auth
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST" class="d-inline">

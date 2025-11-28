@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('conferences.store') }}">
+                    <form method="POST" action="{{ route('conferences.store') }}" data-ajax="true">
                         @csrf
 
                         @include('conferences.fields')
