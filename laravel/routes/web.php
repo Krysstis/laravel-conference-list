@@ -1,7 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConferenceController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('conferences.index');
+});
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/conferences', [ConferenceController::class, 'index'])->name('conferences.index');
+Route::get('/conferences/{conference}', [ConferenceController::class, 'show'])->name('conferences.show');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/conferences/create', [ConferenceController::class, 'create'])->name('conferences.create');
+    Route::post('/conferences', [ConferenceController::class, 'store'])->name('conferences.store');
+    Route::get('/conferences/{conference}/edit', [ConferenceController::class, 'edit'])->name('conferences.edit');
+    Route::put('/conferences/{conference}', [ConferenceController::class, 'update'])->name('conferences.update');
+    Route::delete('/conferences/{conference}', [ConferenceController::class, 'destroy'])->name('conferences.destroy');
 });

@@ -23,9 +23,7 @@
                         <th>{{ __('conferences.fields.title') }}</th>
                         <th>{{ __('conferences.fields.date') }}</th>
                         <th>{{ __('conferences.fields.address') }}</th>
-                        @auth
-                            <th class="text-end">{{ __('conferences.actions.edit') }}</th>
-                        @endauth
+                        <th class="text-end">{{ __('conferences.actions.edit') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,8 +32,11 @@
                             <td>{{ $conference->title }}</td>
                             <td>{{ $conference->date }}</td>
                             <td>{{ $conference->address }}</td>
-                            @auth
-                                <td class="text-end">
+                            <td class="text-end">
+                                <a href="{{ route('conferences.show', $conference) }}" class="btn btn-sm btn-info">
+                                    {{ __('conferences.actions.view') }}
+                                </a>
+                                @auth
                                     <a href="{{ route('conferences.edit', $conference) }}" class="btn btn-sm btn-primary">
                                         {{ __('conferences.actions.edit') }}
                                     </a>
@@ -48,8 +49,8 @@
                                             {{ __('conferences.actions.delete') }}
                                         </button>
                                     </form>
-                                </td>
-                            @endauth
+                                @endauth
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
