@@ -7,6 +7,7 @@
 
     <title>{{ config('app.name', 'Konferencijų sistema') }}</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
