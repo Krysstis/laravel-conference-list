@@ -42,6 +42,18 @@
                                 <p class="ms-4 mb-0 fs-5 fw-semibold">{{ $conference->address }}</p>
                             </div>
                         </div>
+
+                        @if($conference->participant_count)
+                        <div class="col-md-6">
+                            <div class="p-3 bg-light rounded">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-people me-2 fs-5"></i>
+                                    <h6 class="text-muted mb-0">{{ __('conferences.fields.participant_count') }}</h6>
+                                </div>
+                                <p class="ms-4 mb-0 fs-5 fw-semibold">{{ $conference->participant_count }}</p>
+                            </div>
+                        </div>
+                        @endif
                     </div>
 
                     <div class="d-flex justify-content-between mt-5 pt-3 border-top">

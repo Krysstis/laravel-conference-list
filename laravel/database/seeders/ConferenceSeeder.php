@@ -16,30 +16,35 @@ class ConferenceSeeder extends Seeder
                 'description' => 'Kasmetinis susitikimas, kuriame aptariamos naujausios programavimo kalbų tendencijos, įrankiai ir geriausia praktika įvairiose srityse.',
                 'date' => '2025-04-12',
                 'address' => 'Vilnius, Gedimino pr. 15',
+                'participant_count' => 250,
             ],
             [
                 'title' => 'Duomenų bazių optimizavimo seminaras',
                 'description' => 'Praktinis seminaras apie efektyvų darbą su duomenų bazėmis, optimizavimo metodus ir naujausias SQL technologijas.',
                 'date' => '2025-06-08',
                 'address' => 'Kaunas, Savanorių pr. 28',
+                'participant_count' => 150,
             ],
             [
                 'title' => 'Kibernetinio saugumo forumas',
                 'description' => 'Forumas skirtas informacijos saugumui aptarti, naujausiems grėsmių tipams ir apsaugos metodams pristatyti.',
                 'date' => '2025-08-22',
                 'address' => 'Klaipėda, Taikos pr. 101',
+                'participant_count' => 300,
             ],
             [
                 'title' => 'Dirbtinio intelekto technologijos',
                 'description' => 'Dirbtinio intelekto ir mašininio mokymosi konferencija, pristatanti naujausius pasiekimus ir praktines aplikacijas.',
                 'date' => '2025-10-05',
                 'address' => 'Vilnius, Lvovo g. 25',
+                'participant_count' => 400,
             ],
             [
                 'title' => 'Backend Development 2025',
                 'description' => 'Konferencija apie serverio pusės kūrimą, API projektavimą, mikroservisų architektūrą ir debesų kompiuterijos sprendimus.',
                 'date' => '2025-12-18',
                 'address' => 'Šiauliai, Tilžės g. 109',
+                'participant_count' => 180,
             ],
         ];
 

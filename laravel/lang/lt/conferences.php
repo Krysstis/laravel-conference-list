@@ -13,6 +13,7 @@ return [
         'description' => 'Aprašymas',
         'date' => 'Renginio data',
         'address' => 'Vieta',
+        'participant_count' => 'Dalyvių skaičius',
     ],
 
     'actions' => [
@@ -40,5 +41,7 @@ return [
         'date_date' => 'Netinkamas datos formatas',
         'address_required' => 'Reikalinga nurodyti vietą',
         'address_max' => 'Vietos laukas negali viršyti 255 simbolių',
+        'participant_count_integer' => 'Dalyvių skaičius turi būti sveikasis skaičius',
+        'participant_count_min' => 'Dalyvių skaičius turi būti bent 1',
     ],
 ];

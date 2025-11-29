@@ -48,3 +48,16 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
+<div class="mb-3">
+    <label for="participant_count" class="form-label">{{ __('conferences.fields.participant_count') }}</label>
+    <input type="number"
+           class="form-control @error('participant_count') is-invalid @enderror"
+           id="participant_count"
+           name="participant_count"
+           min="1"
+           value="{{ old('participant_count', $conference->participant_count ?? '') }}">
+    @error('participant_count')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>

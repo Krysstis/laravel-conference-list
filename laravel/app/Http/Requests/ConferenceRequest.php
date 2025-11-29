@@ -18,6 +18,7 @@ class ConferenceRequest extends FormRequest
             'description' => 'required|string',
             'date' => 'required|date',
             'address' => 'required|string|max:255',
+            'participant_count' => 'nullable|integer|min:1',
         ];
     }
 
@@ -31,6 +32,8 @@ class ConferenceRequest extends FormRequest
             'date.date' => __('conferences.validation.date_date'),
             'address.required' => __('conferences.validation.address_required'),
             'address.max' => __('conferences.validation.address_max'),
+            'participant_count.integer' => __('conferences.validation.participant_count_integer'),
+            'participant_count.min' => __('conferences.validation.participant_count_min'),
         ];
     }
 }
