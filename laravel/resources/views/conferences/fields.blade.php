@@ -29,7 +29,7 @@
            class="form-control @error('date') is-invalid @enderror"
            id="date"
            name="date"
-           value="{{ old('date', $conference->date ?? '') }}"
+           value="{{ old('date', isset($conference) ? $conference->date?->format('Y-m-d') : '') }}"
            required>
     @error('date')
         <div class="invalid-feedback">{{ $message }}</div>

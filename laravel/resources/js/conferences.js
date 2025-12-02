@@ -9,4 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Open calendar when clicking on date input
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+        input.addEventListener('click', function() {
+            this.showPicker?.();
+        });
+    });
 });
