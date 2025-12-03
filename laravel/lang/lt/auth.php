@@ -5,14 +5,17 @@ return [
     'logout' => 'Atsijungti',
     'email' => 'Elektroninis paštas',
     'password' => 'Slaptažodis',
-    'remember_me' => 'Įsiminti mano duomenis',
 
     'failed' => 'Prisijungimo duomenys neteisingi.',
-    'throttle' => 'Per daug bandymų prisijungti. Pabandykite po :seconds sekundžių.',
 
     'messages' => [
         'logged_in' => 'Prisijungimas sėkmingas',
         'logged_out' => 'Jūs atsijungėte nuo sistemos',
-        'unauthorized' => 'Prieiga draudžiama',
+    ],
+
+    'validation' => [
+        'email_required' => 'Prašome įvesti elektroninį paštą',
+        'email_invalid' => 'Netinkamas elektroninio pašto formatas',
+        'password_required' => 'Prašome įvesti slaptažodį',
     ],
 ];

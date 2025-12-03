@@ -24,13 +24,15 @@ return [
         'delete' => 'Ištrinti',
         'view' => 'Žiūrėti',
         'back' => 'Atgal',
+        'cancel' => 'Atšaukti',
     ],
 
     'messages' => [
         'created' => 'Renginys sukurtas sėkmingai',
         'updated' => 'Informacija atnaujinta',
         'deleted' => 'Renginys ištrintas',
-        'confirm_delete' => 'Ar tikrai norite ištrinti šį renginį?',
+        'confirm_delete' => 'Ar tikrai norite ištrinti renginį',
+        'confirm_delete_title' => 'Patvirtinkite ištrynimą',
     ],
 
     'validation' => [

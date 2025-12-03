@@ -37,18 +37,18 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Patvirtinkite ištrynimą</h5>
+                                                <h5 class="modal-title">{{ __('conferences.messages.confirm_delete_title') }}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                             </div>
                                             <div class="modal-body">
-                                                Ar tikrai norite ištrinti renginį <strong>{{ $conference->title }}</strong>?
+                                                {{ __('conferences.messages.confirm_delete') }} <strong>{{ $conference->title }}</strong>?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Atšaukti</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('conferences.actions.cancel') }}</button>
                                                 <form action="{{ route('conferences.destroy', $conference) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Ištrinti</button>
+                                                    <button type="submit" class="btn btn-danger">{{ __('conferences.actions.delete') }}</button>
                                                 </form>
                                             </div>
                                         </div>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" translate="no">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google" content="notranslate">
 
     <title>{{ config('app.name', 'Konferencijų sistema') }}</title>
 
@@ -37,9 +38,6 @@
             cursor: pointer;
             opacity: 0.5;
         }
-        .custom-notification .close-btn:hover {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
@@ -48,7 +46,17 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ __('conferences.title') }}
             </a>
-            <div>
+            <div class="d-flex align-items-center gap-2">
+                <div class="btn-group btn-group-sm">
+                    <a href="{{ route('language.switch', 'lt') }}"
+                       class="btn btn-outline-light {{ app()->getLocale() == 'lt' ? 'active' : '' }}">
+                        LT
+                    </a>
+                    <a href="{{ route('language.switch', 'en') }}"
+                       class="btn btn-outline-light {{ app()->getLocale() == 'en' ? 'active' : '' }}">
+                        EN
+                    </a>
+                </div>
                 @guest
                     <a href="{{ route('login') }}" class="btn btn-light btn-sm">{{ __('auth.login') }}</a>
                 @endguest

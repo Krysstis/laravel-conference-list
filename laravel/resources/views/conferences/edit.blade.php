@@ -19,7 +19,7 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('conferences.update', $conference) }}" data-ajax="true">
+                    <form method="POST" action="{{ route('conferences.update', $conference) }}" data-ajax="true" novalidate>
                         @csrf
                         @method('PUT')
 

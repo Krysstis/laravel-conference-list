@@ -12,6 +12,13 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/language/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'lt'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('language.switch');
+
 Route::get('/conferences', [ConferenceController::class, 'index'])->name('conferences.index');
 
 Route::middleware('auth')->group(function () {
